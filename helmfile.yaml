@@ -1,0 +1,30 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+  - name: confluentinc
+    url: https://confluentinc.github.io/cp-helm-charts
+  - name: rhcharts
+    url: https://ricardo-aires.github.io/helm-charts/
+  - name: pinot
+    url: https://raw.githubusercontent.com/apache/pinot/master/kubernetes/helm
+
+releases:
+- name: olap-kafka
+  namespace: olap
+  chart: bitnami/kafka
+  values:
+    - ./values/kafka/values.yaml
+
+- name: olap-schema-registry
+  namespace: olap
+  chart: rhcharts/schema-registry
+  values:
+    - ./values/cp-schema-registry/schema-registry.yaml
+
+- name: olap-pinot
+  namespace: olap
+  chart: pinot/pinot
+  values:
+    - ./values/pinot/values.yaml
+
+   
