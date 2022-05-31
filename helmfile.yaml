@@ -7,6 +7,8 @@ repositories:
     url: https://ricardo-aires.github.io/helm-charts/
   - name: pinot
     url: https://raw.githubusercontent.com/apache/pinot/master/kubernetes/helm
+  - name: superset
+    url: https://apache.github.io/superset
 
 releases:
 - name: olap-kafka
@@ -27,4 +29,20 @@ releases:
   values:
     - ./values/pinot/values.yaml
 
-   
+- name: olap-redis
+  namespace: olap
+  chart: bitnami/redis
+  values:
+    - ./values/redis/values.yaml 
+
+- name: olap-postgresql
+  namespace: olap
+  chart: bitnami/postgresql
+  values:
+    - ./values/postgresql/values.yaml  
+
+- name: olap-superset
+  namespace: olap
+  chart: superset/superset
+  values:
+    - ./values/superset/values.yaml
