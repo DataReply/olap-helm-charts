@@ -21,7 +21,7 @@ releases:
   namespace: olap
   chart: rhcharts/schema-registry
   values:
-    - ./values/cp-schema-registry/schema-registry.yaml
+    - ./values/schema-registry/values.yaml
 
 - name: olap-pinot
   namespace: olap

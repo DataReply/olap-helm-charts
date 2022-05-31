@@ -213,7 +213,7 @@ master:
   ## @param master.livenessProbe.successThreshold Success threshold for livenessProbe
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 20
     periodSeconds: 5
     timeoutSeconds: 5
@@ -227,7 +227,7 @@ master:
   ## @param master.readinessProbe.successThreshold Success threshold for readinessProbe
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 20
     periodSeconds: 5
     timeoutSeconds: 1
@@ -400,7 +400,7 @@ master:
   persistence:
     ## @param master.persistence.enabled Enable persistence on Redis&trade; master nodes using Persistent Volume Claims
     ##
-    enabled: true
+    enabled: false
     ## @param master.persistence.medium Provide a medium for `emptyDir` volumes.
     ##
     medium: ""
@@ -569,7 +569,7 @@ replica:
     successThreshold: 1
     failureThreshold: 22
   ## @param replica.livenessProbe.enabled Enable livenessProbe on Redis&trade; replicas nodes
-  ## @param replica.livenessProbe.initialDelaySeconds Initial delay seconds for livenessProbe
+  ## @param replic	a.livenessProbe.initialDelaySeconds Initial delay seconds for livenessProbe
   ## @param replica.livenessProbe.periodSeconds Period seconds for livenessProbe
   ## @param replica.livenessProbe.timeoutSeconds Timeout seconds for livenessProbe
   ## @param replica.livenessProbe.failureThreshold Failure threshold for livenessProbe
