@@ -3,31 +3,33 @@ repositories:
     url: https://charts.bitnami.com/bitnami
   - name: confluentinc
     url: https://confluentinc.github.io/cp-helm-charts
-  - name: rhcharts
-    url: https://ricardo-aires.github.io/helm-charts/
-  - name: pinot
-    url: https://raw.githubusercontent.com/apache/pinot/master/kubernetes/helm
+  # - name: rhcharts
+  #   url: https://ricardo-aires.github.io/helm-charts/
+  # - name: pinot
+  #   url: https://raw.githubusercontent.com/apache/pinot/master/kubernetes/helm
   - name: superset
     url: https://apache.github.io/superset
+  - name: nginx-stable
+    url: https://helm.nginx.com/stable
 
 releases:
-- name: olap-kafka
-  namespace: olap
-  chart: bitnami/kafka
-  values:
-    - ./values/kafka/values.yaml
+# - name: olap-kafka
+#   namespace: olap
+#   chart: bitnami/kafka
+#   values:
+#     - ./values/kafka/values.yaml
 
-- name: olap-schema-registry
-  namespace: olap
-  chart: rhcharts/schema-registry
-  values:
-    - ./values/schema-registry/values.yaml
+# - name: olap-schema-registry
+#   namespace: olap
+#   chart: rhcharts/schema-registry
+#   values:
+#     - ./values/schema-registry/values.yaml
 
-- name: olap-pinot
-  namespace: olap
-  chart: pinot/pinot
-  values:
-    - ./values/pinot/values.yaml
+# - name: olap-pinot
+#   namespace: olap
+#   chart: pinot/pinot
+#   values:
+#     - ./values/pinot/values.yaml
 
 - name: olap-redis
   namespace: olap
@@ -46,3 +48,4 @@ releases:
   chart: superset/superset
   values:
     - ./values/superset/values.yaml
+
