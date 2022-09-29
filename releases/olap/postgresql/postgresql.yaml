@@ -1,0 +1,16 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: olap-postgresql
+    namespace: {{ .Environment.Values.project }}
+    chart: bitnami/postgresql
+    values:
+    - ../../../values/olap/postgresql/values.yaml
+    - ../../../envs/dev.yaml

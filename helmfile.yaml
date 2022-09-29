@@ -1,51 +1,21 @@
+---
+environments:
+  dev:
+    values:
+      - envs/dev.yaml
+---
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
-  - name: confluentinc
-    url: https://confluentinc.github.io/cp-helm-charts
-  # - name: rhcharts
-  #   url: https://ricardo-aires.github.io/helm-charts/
-  # - name: pinot
-  #   url: https://raw.githubusercontent.com/apache/pinot/master/kubernetes/helm
   - name: superset
     url: https://apache.github.io/superset
-  - name: nginx-stable
-    url: https://helm.nginx.com/stable
 
-releases:
-# - name: olap-kafka
-#   namespace: olap
-#   chart: bitnami/kafka
-#   values:
-#     - ./values/kafka/values.yaml
+helmDefaults:
+  wait: true
 
-# - name: olap-schema-registry
-#   namespace: olap
-#   chart: rhcharts/schema-registry
-#   values:
-#     - ./values/schema-registry/values.yaml
-
-# - name: olap-pinot
-#   namespace: olap
-#   chart: pinot/pinot
-#   values:
-#     - ./values/pinot/values.yaml
-
-- name: olap-redis
-  namespace: olap
-  chart: bitnami/redis
-  values:
-    - ./values/redis/values.yaml 
-
-- name: olap-postgresql
-  namespace: olap
-  chart: bitnami/postgresql
-  values:
-    - ./values/postgresql/values.yaml  
-
-- name: olap-superset
-  namespace: olap
-  chart: superset/superset
-  values:
-    - ./values/superset/values.yaml
+helmfiles:
+  - ./releases/default/telemetry-client/telemetry-client.yaml
+  - ./releases/olap/postgresql/postgresql.yaml
+  - ./releases/olap/redis/redis.yaml
+  - ./releases/olap/superset/superset.yaml
 

@@ -1,0 +1,6 @@
+releaseVersion: 0.0.1
+env: dev
+envType: dev
+
+clientNamespace: default
+project: olap

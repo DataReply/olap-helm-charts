@@ -1,0 +1,13 @@
+name: telemetry-client
+appName: telemetry-client
+namespace: default
+replicas: 1
+image: public.ecr.aws/k9o2q4k2/f1_telemetry_client:latest-amd64
+imagePullPolicy: Always
+containerPort: 20777
+protocol: UDP
+
+serviceName: telemetry-client-service
+port: 20777
+targetPort: 20777
+serviceType: LoadBalancer

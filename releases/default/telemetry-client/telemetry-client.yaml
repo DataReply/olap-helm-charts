@@ -1,0 +1,17 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: telemetry-client
+    version: {{ .Environment.Values.releaseVersion }}
+    namespace: {{ .Environment.Values.clientNamespace }}
+    chart: ../../../charts/telemetry-client
+    values:
+    - ../../../values/default/telemetry-client/values.yaml
+    - ../../../envs/dev.yaml

@@ -1,0 +1,16 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: olap-redis
+    namespace: {{ .Environment.Values.project }}
+    chart: bitnami/redis
+    values:
+    - ../../../values/olap/redis/values.yaml
+    - ../../../envs/dev.yaml

@@ -1,0 +1,16 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: olap-redis
+    namespace: {{ .Environment.Values.project }}
+    chart: superset/superset
+    values:
+    - ../../../values/olap/superset/values.yaml
+    - ../../../envs/dev.yaml
