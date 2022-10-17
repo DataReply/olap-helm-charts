@@ -1,0 +1,16 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: olap-redis
+    namespace: {{ .Environment.Values.project }}
+    chart: pingcap/tidb-operator
+    values:
+    - ../../../values/olap/tidb/values.yaml
+    - ../../../envs/dev.yaml
