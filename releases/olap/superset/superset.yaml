@@ -8,7 +8,7 @@ helmDefaults:
   createNamespace: false
 
 releases:
-  - name: olap-redis
+  - name: olap-superset
     namespace: {{ .Environment.Values.project }}
     chart: superset/superset
     values:
