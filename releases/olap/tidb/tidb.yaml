@@ -8,7 +8,7 @@ helmDefaults:
   createNamespace: false
 
 releases:
-  - name: olap-redis
+  - name: olap-tidb
     namespace: {{ .Environment.Values.project }}
     chart: pingcap/tidb-operator
     values:
