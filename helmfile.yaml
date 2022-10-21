@@ -9,6 +9,8 @@ repositories:
     url: https://charts.bitnami.com/bitnami
   - name: superset
     url: https://apache.github.io/superset
+  - name: tidb
+    url: https://github.com/pingcap/tidb-operator
 
 helmDefaults:
   wait: true
@@ -18,4 +20,5 @@ helmfiles:
   - ./releases/olap/postgresql/postgresql.yaml
   - ./releases/olap/redis/redis.yaml
   - ./releases/olap/superset/superset.yaml
+  - ./releases/olap/tidb/tidb.yaml
 
