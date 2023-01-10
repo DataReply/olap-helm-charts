@@ -1,0 +1,16 @@
+name: d3-dashboard
+appName: d3-dashboard
+namespace: olap
+replicas: 1
+image: public.ecr.aws/k9o2q4k2/olap-f1-d3-dashboard:latest
+imagePullPolicy: Always
+containerPort: 3000
+protocol: TCP
+
+serviceName: d3-dashboard-service
+port: 80
+targetPort: 3000
+serviceType: LoadBalancer
+
+envVars:
+  REACT_APP_WEBSOCKET_API_BASE_URL: localhost
