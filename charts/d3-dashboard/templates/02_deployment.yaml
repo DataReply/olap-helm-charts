@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ required ".Values.name is required" .Values.name }}
+  labels:
+    app: {{ required ".Values.appName is required" .Values.appName }}
+  namespace: {{ required ".Values.namespace is required" .Values.namespace }}
+spec:
+  replicas: {{ required ".Values.replicas is required" .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ required ".Values.appName is required" .Values.appName }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ required ".Values.appName is required" .Values.appName }}
+    spec:
+      containers:
+      - image: {{ required ".Values.image is required" .Values.image }}
+        imagePullPolicy: {{ required ".Values.imagePullPolicy is required" .Values.imagePullPolicy }}
+        name: {{ required ".Values.name is required" .Values.name }}
+        ports:
+        - containerPort: {{ required ".Values.containerPort is required" .Values.containerPort }}
+          protocol: {{ required ".Values.protocol is required" .Values.protocol }}
+        envFrom:
+        - configMapRef:
+            name: {{ .Values.appName }}-config
