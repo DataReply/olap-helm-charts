@@ -1,0 +1,16 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: websockets-api
+    namespace: {{ .Environment.Values.project }}
+    chart: ../../../charts/websockets-api
+    values:
+      - ../../../values/olap/websockets-api/values.yaml
+      - ../../../envs/dev.yaml
