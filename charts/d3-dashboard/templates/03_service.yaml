@@ -2,12 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ required ".Values.serviceName is required" .Values.serviceName }}
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: external
-    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
-    service.beta.kubernetes.io/aws-load-balancer-healthcheck-port: "3000"
-    service.beta.kubernetes.io/aws-load-balancer-healthcheck-protocol: TCP
-    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+  labels:
+    app: {{ required ".Values.serviceName is required" .Values.serviceName  }}
 spec:
   ports:
     - port: {{ required ".Values.port is required" .Values.port }}

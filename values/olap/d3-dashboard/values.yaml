@@ -8,9 +8,11 @@ containerPort: 3000
 protocol: TCP
 
 serviceName: d3-dashboard-service
+ingressName: d3-dashboard-ingress
 port: 80
 targetPort: 3000
-serviceType: LoadBalancer
+serviceType: ClusterIP
 
 envVars:
-  REACT_APP_WEBSOCKET_API_BASE_URL: localhost
+  REACT_APP_WEBSOCKET_API_BASE_URL: k8s-f1olap-8ca2abc9d5-563364616.eu-west-1.elb.amazonaws.com
+  REACT_APP_WEBSOCKET_PORT: "80/api"
