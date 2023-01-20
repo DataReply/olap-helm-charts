@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: "public.ecr.aws/k9o2q4k2/olap-java-websockets-server"
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.7"
 
