@@ -9,8 +9,8 @@ repositories:
     url: https://charts.bitnami.com/bitnami
   - name: superset
     url: https://apache.github.io/superset
-  - name: tidb
-    url: https://github.com/pingcap/tidb-operator
+  - name: pingcap
+    url: https://charts.pingcap.org/
 
 helmDefaults:
   wait: true
