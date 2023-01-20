@@ -50,6 +50,7 @@ ingress:
     alb.ingress.kubernetes.io/target-type: 'ip'
     alb.ingress.kubernetes.io/healthcheck-port: '8080'
     alb.ingress.kubernetes.io/healthcheck-path: /actuator/health
+    alb.ingress.kubernetes.io/group.name: f1-olap
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
