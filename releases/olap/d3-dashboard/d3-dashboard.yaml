@@ -1,0 +1,17 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: d3-dashboard
+    version: {{ .Environment.Values.releaseVersion }}
+    namespace: {{ .Environment.Values.project }}
+    chart: ../../../charts/d3-dashboard
+    values:
+      - ../../../values/olap/d3-dashboard/values.yaml
+      - ../../../envs/dev.yaml
