@@ -7,10 +7,10 @@ environments:
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
-  - name: superset
-    url: https://apache.github.io/superset
-  - name: pingcap
-    url: https://charts.pingcap.org/
+#  - name: superset
+#    url: https://apache.github.io/superset
+#  - name: pingcap
+#    url: https://charts.pingcap.org/
 
 helmDefaults:
   wait: true
@@ -18,8 +18,9 @@ helmDefaults:
 helmfiles:
   - ./releases/default/telemetry-client/telemetry-client.yaml
   - ./releases/olap/d3-dashboard/d3-dashboard.yaml
-  - ./releases/olap/postgresql/postgresql.yaml
-  - ./releases/olap/redis/redis.yaml
-  - ./releases/olap/superset/superset.yaml
-  - ./releases/olap/tidb/tidb.yaml
+  - ./releases/olap/websockets-api/websockets-api.yaml
+#  - ./releases/olap/postgresql/postgresql.yaml
+#  - ./releases/olap/redis/redis.yaml
+#  - ./releases/olap/superset/superset.yaml
+#  - ./releases/olap/tidb/tidb.yaml
 
