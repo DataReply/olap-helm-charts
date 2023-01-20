@@ -49,8 +49,9 @@ ingress:
 #    alb.ingress.kubernetes.io/subnets: subnet-040fe2976563df8a2, subnet-02dd3583547f2e15e
     alb.ingress.kubernetes.io/target-type: 'ip'
     alb.ingress.kubernetes.io/healthcheck-port: '8080'
-    alb.ingress.kubernetes.io/healthcheck-path: /actuator/health
+    alb.ingress.kubernetes.io/healthcheck-path: /api/actuator/health
     alb.ingress.kubernetes.io/group.name: f1-olap
+    alb.ingress.kubernetes.io/group.order: "9"
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
