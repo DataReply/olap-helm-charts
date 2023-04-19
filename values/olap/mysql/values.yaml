@@ -1,0 +1,41 @@
+architecture: standalone
+
+primary:
+  livenessProbe:
+    enabled: false
+  
+  readinessProbe:
+    enabled: false
+  
+
+  
+  persistence:
+    size: 1Gi
+
+#  initdb:
+#    scripts:
+#      create_superset_db.sh: |
+#        #!/bin/sh
+#
+#        # check if superset database exists, if not create it
+#        if [ "$( psql -U postgres -tAc "SELECT 1 FROM pg_database WHERE datname='superset'" )" = '1' ]
+#        then
+#          echo "Superset database already exists"
+#        else
+#          echo "Database does not exist"
+#          echo "Creating superset db"
+#          psql -U postgres -c "CREATE DATABASE superset"
+#        fi
+#
+#        # check if superset user exists, if not create it
+#        if [ "$( psql -U postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='superset'" )" = '1' ]
+#        then
+#          echo "Superset database already exists"
+#        else
+#          echo "Superset user doesn't exist"
+#          echo "Create superset user"
+#          psql -U postgres -c "CREATE USER superset WITH ENCRYPTED PASSWORD 'olappostgresql'"
+#        fi
+#
+#        echo "Granting permission to superset user"
+#        psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE superset TO superset"

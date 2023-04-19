@@ -1,0 +1,16 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: mysql
+    namespace: {{ .Environment.Values.project }}
+    chart: bitnami/mysql
+    values:
+      - ../../../values/olap/mysql/values.yaml
+      - ../../../envs/dev.yaml
