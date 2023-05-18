@@ -24,6 +24,13 @@ spec:
       - image: {{ required ".Values.image is required" .Values.image }}
         imagePullPolicy: {{ required ".Values.imagePullPolicy is required" .Values.imagePullPolicy }}
         name: {{ required ".Values.name is required" .Values.name }}
+        env:
+          - name: MYSQL_USER
+            value: root
+          - name: MYSQL_PASS
+            value: MRAIWfVg5g
+          - name: MYSQL_HOST
+            value: 10.100.22.235:3306
         ports:
         - containerPort: {{ required ".Values.containerPort is required" .Values.containerPort }}
           protocol: {{ required ".Values.protocol is required" .Values.protocol }}

@@ -19,6 +19,7 @@ helmfiles:
   - ./releases/default/telemetry-client/telemetry-client.yaml
   - ./releases/olap/d3-dashboard/d3-dashboard.yaml
   - ./releases/olap/websockets-api/websockets-api.yaml
+  - ./releases/olap/mysql/mysql.yaml
 #  - ./releases/olap/postgresql/postgresql.yaml
 #  - ./releases/olap/redis/redis.yaml
 #  - ./releases/olap/superset/superset.yaml
