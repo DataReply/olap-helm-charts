@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ required ".Values.ingressName is required" .Values.ingressName }}
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: {{ required ".Values.healthcheckPath is required" .Values.healthcheckPath }}
+    alb.ingress.kubernetes.io/healthcheck-port: "{{ required ".Values.targetPort is required" .Values.targetPort }}"
+    alb.ingress.kubernetes.io/group.name: f1-olap
+    alb.ingress.kubernetes.io/group.order: "8"
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: {{ required ".Values.servicePathPrefix is required" .Values.servicePathPrefix }}
+        backend:
+          service:
+            name: {{ required ".Values.serviceName is required" .Values.serviceName }}
+            port:
+              number: {{ required ".Values.port is required" .Values.port }}

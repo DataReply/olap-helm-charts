@@ -1,0 +1,14 @@
+{{- if .Values.envVars }}
+{{- with .Values }}
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ index . "appName" }}-config
+data:
+  {{- range $key, $value := .envVars }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+
+{{- end }}
+{{- end }}
