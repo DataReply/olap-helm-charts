@@ -16,3 +16,8 @@ serviceType: ClusterIP
 envVars:
   REACT_APP_WEBSOCKET_API_BASE_URL: k8s-f1olap-8ca2abc9d5-563364616.eu-west-1.elb.amazonaws.com
   REACT_APP_WEBSOCKET_PORT: "80/api"
+  REACT_APP_USERPOOL_ID: eu-west-1_3G6ezhtwF
+  REACT_APP_CLIENT_ID: 172accvcpm0rtn2r9gbqi9p1fi
+  REACT_APP_PROFILE_API_PROTOCOL: http
+  REACT_APP_PROFILE_API_BASE_URL: k8s-f1olap-8ca2abc9d5-563364616.eu-west-1.elb.amazonaws.com
+  REACT_APP_PROFILE_API_PORT: 80
