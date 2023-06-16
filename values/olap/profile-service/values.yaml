@@ -1,0 +1,23 @@
+name: profile-service
+appName: profile-service
+namespace: olap
+replicas: 1
+image: public.ecr.aws/k9o2q4k2/olap-f1-profile-service:latest
+imagePullPolicy: Always
+containerPort: 8080
+protocol: TCP
+servicePathPrefix: /profile-api
+healthcheckPath: /profile-api/health
+
+serviceName: profile-service
+ingressName: profile-ingress
+port: 80
+targetPort: 8080
+serviceType: ClusterIP
+
+envVars:
+  server.port: "8080"
+  spring.datasource.url: jdbc:mysql://mysql:3306/olap?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+  spring.datasource.username: root
+  spring.datasource.password: secret-pw
+  spring.jpa.hibernate.ddl-auto: update

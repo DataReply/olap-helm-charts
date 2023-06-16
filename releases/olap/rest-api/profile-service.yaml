@@ -1,0 +1,17 @@
+---
+environments:
+  dev:
+    values:
+      - ../../../envs/dev.yaml
+---
+helmDefaults:
+  createNamespace: false
+
+releases:
+  - name: profile-service
+    version: {{ .Environment.Values.releaseVersion }}
+    namespace: {{ .Environment.Values.project }}
+    chart: ../../../charts/rest-api
+    values:
+      - ../../../values/olap/profile-service/values.yaml
+      - ../../../envs/dev.yaml
