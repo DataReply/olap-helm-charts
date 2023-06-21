@@ -30,7 +30,17 @@ spec:
           - name: MYSQL_PASS
             value: MRAIWfVg5g
           - name: MYSQL_HOST
-            value: 10.100.22.235:3306
+            value: 10.100.48.48
+          - name: KAFKA_TOPIC
+            value: {{ .Values.kafkaTopic }}
+          - name: BOOTSTRAP_SERVERS
+            value: {{ .Values.bootstrapServers }}
+          - name: SASL_USERNAME
+            value: {{ .Values.saslUsername }}
+          - name: SASL_PASSWORD
+            value: {{ .Values.saslPassword }}
+          - name: CLIENT_ID
+            value: f1_telemetry_client
         ports:
         - containerPort: {{ required ".Values.containerPort is required" .Values.containerPort }}
           protocol: {{ required ".Values.protocol is required" .Values.protocol }}
