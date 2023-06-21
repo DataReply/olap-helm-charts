@@ -11,3 +11,8 @@ serviceName: telemetry-client-service
 port: 20777
 targetPort: 20777
 serviceType: LoadBalancer
+
+kafkaTopic: f1_data
+bootstrapServers: pkc-e0zxq.eu-west-3.aws.confluent.cloud:9092
+saslUsername: N5TMX3PUDJFKEU7X
+saslPassword: jRpyQXN6KBtHSOfPSRj40BNGxoYfNn49/GX+eU9kHyXGYP+fyMF7IW/YDFiLKZpU
