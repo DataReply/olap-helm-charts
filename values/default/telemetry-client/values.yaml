@@ -2,7 +2,7 @@ name: telemetry-client
 appName: telemetry-client
 namespace: default
 replicas: 1
-image: public.ecr.aws/k9o2q4k2/f1_telemetry_client:latest-amd64
+image: public.ecr.aws/k9o2q4k2/f1_telemetry_client:dev11
 imagePullPolicy: Always
 containerPort: 20777
 protocol: UDP
