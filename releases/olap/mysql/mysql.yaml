@@ -9,7 +9,7 @@ helmDefaults:
 
 releases:
   - name: mysql
-    installed: false
+    installed: true
     namespace: {{ .Environment.Values.project }}
     chart: bitnami/mysql
     values:

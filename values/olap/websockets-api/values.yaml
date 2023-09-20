@@ -1,2 +1,13 @@
 ingress:
   enabled: true
+
+
+image:
+  repository: "public.ecr.aws/k9o2q4k2/olap-java-websockets-server"
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.11"
+
+envVars:
+  KAFKA_TOPIC: "f1-data"
+  DRUID_JDBC_CONN_STRING: "jdbc:avatica:remote:url=https://imply-791-elbexter-14anozumegl2n-346966989.eu-west-1.elb.amazonaws.com:9088/druid/v2/sql/avatica/"

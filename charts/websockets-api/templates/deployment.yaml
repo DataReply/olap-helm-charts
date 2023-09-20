@@ -66,6 +66,10 @@ spec:
                 secretKeyRef:
                   name: truststore
                   key: password
+            {{- range $key, $value := .Values.envVars }}
+            - name: {{ $key }}
+              value: {{ $value }}
+            {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

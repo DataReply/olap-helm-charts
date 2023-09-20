@@ -28,9 +28,9 @@ spec:
           - name: MYSQL_USER
             value: root
           - name: MYSQL_PASS
-            value: MRAIWfVg5g
+            value: NVdtbaf4z5
           - name: MYSQL_HOST
-            value: 10.100.48.48
+            value: 10.100.171.160
           - name: KAFKA_TOPIC
             value: {{ .Values.kafkaTopic }}
           - name: BOOTSTRAP_SERVERS

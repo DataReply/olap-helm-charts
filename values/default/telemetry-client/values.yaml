@@ -2,7 +2,7 @@ name: telemetry-client
 appName: telemetry-client
 namespace: default
 replicas: 1
-image: public.ecr.aws/k9o2q4k2/f1_telemetry_client:dev11
+image: public.ecr.aws/k9o2q4k2/f1_telemetry_client:dev15
 imagePullPolicy: Always
 containerPort: 20777
 protocol: UDP
@@ -12,7 +12,7 @@ port: 20777
 targetPort: 20777
 serviceType: LoadBalancer
 
-kafkaTopic: f1_data
-bootstrapServers: pkc-e0zxq.eu-west-3.aws.confluent.cloud:9092
-saslUsername: N5TMX3PUDJFKEU7X
-saslPassword: jRpyQXN6KBtHSOfPSRj40BNGxoYfNn49/GX+eU9kHyXGYP+fyMF7IW/YDFiLKZpU
+kafkaTopic: f1-data
+bootstrapServers: pkc-ymrq7.us-east-2.aws.confluent.cloud:9092
+saslUsername: 75WBE7B5DCLWPPCP
+saslPassword: UbrDLo7okAZgQhbVPgFF0YkMlo77lb53nDnc6FhzWR/4a9UDx44rCnMdgUyNx54v
