@@ -6,7 +6,7 @@ image:
   repository: "public.ecr.aws/k9o2q4k2/olap-java-websockets-server"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.11"
+  tag: "1.16"
 
 envVars:
   KAFKA_TOPIC: "f1-data"
