@@ -11,3 +11,5 @@ image:
 envVars:
   KAFKA_TOPIC: "f1-data"
   DRUID_JDBC_CONN_STRING: "jdbc:avatica:remote:url=https://imply-791-elbexter-14anozumegl2n-346966989.eu-west-1.elb.amazonaws.com:9088/druid/v2/sql/avatica/"
+  SASL_USERNAME: TKZYCY7FUNJM6GQE
+  SASL_PASSWORD: djpH8tHnBsLS5JWDCPCsApYhPqDvRDJixXb+Lx1ITSUpxc8jLiIT+zQkAVJ/8riS
